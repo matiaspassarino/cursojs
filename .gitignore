@@ -1,0 +1,36 @@
+# Dependencias
+node_modules/
+.pnp
+.pnp.js
+
+# Entornos Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Build / output
+dist/
+build/
+.next/
+out/
+
+# Variables de entorno / secretos
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Archivos pesados de Figma (mantener el repo liviano)
+Figma/*.fig
+
