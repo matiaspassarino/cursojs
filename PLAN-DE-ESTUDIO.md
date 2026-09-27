@@ -14,6 +14,22 @@ Desde el día 1, usar Claude Code como compañero de desarrollo en cada proyecto
 
 ---
 
+## Repositorio del Curso
+Todo este directorio (`D:\Documentos\Cursos`) está versionado con Git y subido a GitHub:
+- **Repo:** https://github.com/matiaspassarino/cursojs (público)
+- **Rama principal:** `main`
+- **Excluido del repo (`.gitignore`):** `node_modules/`, entornos virtuales de Python, builds (`dist/`, `.next/`, etc.), archivos `.env`, y los `.fig` de la carpeta `Figma/` (pesan demasiado — copiarlos aparte por USB/nube si hace falta).
+
+**Para migrar a otro sistema operativo o PC nueva:**
+```bash
+git clone https://github.com/matiaspassarino/cursojs.git
+```
+Luego reinstalar dependencias sueltas por carpeta (`npm install`, `pip install -r requirements.txt`, etc.) según el proyecto, ya que `node_modules`/`venv` no se suben al repo.
+
+**Flujo diario recomendado:** al terminar de trabajar, hacer commit y push (`git add -A && git commit -m "..." && git push`) para mantener el progreso respaldado y el contribution graph de GitHub activo (ver métrica semanal más abajo).
+
+---
+
 ## Fase 1: Fundamentos Sólidos (Semanas 1-6)
 
 ### Semana 1-2: JavaScript Moderno a Fondo
