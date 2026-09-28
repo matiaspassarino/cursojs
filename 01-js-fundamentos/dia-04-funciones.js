@@ -289,8 +289,11 @@ console.log(aplicarDosVeces(10, (n) => n * 10));   // 1000
 // Después llamala y mostrá el resultado desde afuera.
 
 // Escribí tu código acá abajo:
+function areaRectangulo(base, altura){
+  return base * altura;
+};
 
-
+console.log(areaRectangulo(10, 12));
 
 // EJERCICIO 2: Refactorizar el Día 2
 // Instrucción: Acordate de la calculadora de descuentos del Día 2.
