@@ -308,6 +308,21 @@ console.log(areaRectangulo(10, 12));
 
 // Escribí tu código acá abajo:
 
+function comprar(monto){
+    let descuento = 0;
+    if(monto < 999){
+        return monto;
+    } else if(monto >= 1000){
+        descuento = 0.1;
+    } else if(monto >= 4999){
+        descuento = 0.15;
+    } else {
+        descuento = 0.2;
+    };
+    return monto - (descuento * monto);
+};
+
+console.log(comprar(500));
 
 
 // EJERCICIO 3: Función booleana + bucle
