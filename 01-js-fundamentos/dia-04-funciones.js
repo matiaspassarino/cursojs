@@ -331,8 +331,13 @@ console.log(calcularTotal(500));
 // Después usala dentro de un bucle para imprimir los pares del 1 al 20.
 
 // Escribí tu código acá abajo:
+function esPar(numero) {
+  return numero % 2 === 0;
+}
 
-
+for (let i = 0; i <= 20; i++) {
+  console.log(esPar(i));
+}
 
 // EJERCICIO 4: Traducir a arrow function
 // Instrucción: Reescribí estas tres funciones como arrow functions.
@@ -351,8 +356,9 @@ function nombreCompleto(nombre, apellido) {
 }
 
 // Escribí tus versiones arrow acá abajo (poneles otro nombre para no pisarlas):
-
-
+const aMayusculas = (texto) => texto.toUpperCase();
+const esMayorDeEdad = (edad) => edad >= 18;
+const nombreCompleto = (nombre, apellido) => `${nombre} ${apellido}`;
 
 // EJERCICIO 5: Parámetros por defecto
 // Instrucción: Escribí `formatearPrecio(monto, moneda = "$", decimales = 2)`
@@ -362,7 +368,8 @@ function nombreCompleto(nombre, apellido) {
 
 // Escribí tu código acá abajo:
 
-
+const formatearPrecio = (monto, moneda = "$", decimales = 2) => `${moneda} ${monto.toFixed(decimales)} `;
+console.log(formatearPrecio(1234.5));
 
 // EJERCICIO 6: Refactorizar el Día 3
 // Instrucción: Convertí el ejercicio del "producto más caro" en una
