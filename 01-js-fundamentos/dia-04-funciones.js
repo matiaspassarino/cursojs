@@ -392,7 +392,16 @@ const libros = [
 
 // Escribí tu código acá abajo:
 
-
+function masCaro(lista){
+  let caro = lista[0];
+  for(item of lista){
+    if (item.precio > caro.precio) {
+      caro = item;
+    }
+  }
+  return caro;
+}
+console.log(masCaro(productos));
 
 // EJERCICIO 7: Predecí la salida (scope)
 // Instrucción: ANTES de ejecutar, escribí en un comentario qué creés
@@ -408,8 +417,8 @@ function incrementar() {
 }
 
 // Tu predicción acá:
-// console.log(incrementar()) →
-// console.log(contador)      →
+// console.log(incrementar()) → 101
+// console.log(contador)      → 0
 
 // Descomentá para verificar:
 // console.log(incrementar());
@@ -425,10 +434,20 @@ function incrementar() {
 //
 // (Spoiler: acabás de reescribir .map(), que vemos el Día 6)
 
-const numeros = [1, 2, 3, 4];
+function procesarLista(lista, fn) {
+  const resultado = [];
+  for (const numero of lista) {
+    const valorCalculado = fn(numero); 
+    resultado.push(valorCalculado); 
+  }
+  return resultado; 
+}
+function doble(numero) {
+  return numero * 2;
+}
 
-// Escribí tu código acá abajo:
-
+const arrayFinal = procesarLista(numeros, doble);
+console.log(arrayFinal); 
 
 
 // ===============================================
