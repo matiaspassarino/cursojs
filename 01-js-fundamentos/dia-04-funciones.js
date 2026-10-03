@@ -310,19 +310,22 @@ console.log(areaRectangulo(10, 12));
 
 function calcularTotal(monto){
     let descuento = 0;
-    if(monto < 999){
-        return monto;
-    } else if(monto >= 1000){
-        descuento = 0.1;
-    } else if(monto >= 4999){
-        descuento = 0.15;
-    } else {
+    if(monto >= 10000){
         descuento = 0.2;
+    } else if(monto > 4999){
+        descuento = 0.15;
+    } else if(monto > 999){
+        descuento = 0.1;
+    } else {
+        return monto;
     };
     return monto - (descuento * monto);
 };
 
 console.log(calcularTotal(500));
+console.log(calcularTotal(1200));
+console.log(calcularTotal(7000));
+console.log(calcularTotal(15000));
 
 
 // EJERCICIO 3: Función booleana + bucle
@@ -335,8 +338,10 @@ function esPar(numero) {
   return numero % 2 === 0;
 }
 
-for (let i = 0; i <= 20; i++) {
-  console.log(esPar(i));
+for (let i = 1; i <= 20; i++) {
+  if(esPar(i)){
+    console.log(i);
+  };
 }
 
 // EJERCICIO 4: Traducir a arrow function
@@ -356,9 +361,9 @@ function nombreCompleto(nombre, apellido) {
 }
 
 // Escribí tus versiones arrow acá abajo (poneles otro nombre para no pisarlas):
-const aMayusculas = (texto) => texto.toUpperCase();
-const esMayorDeEdad = (edad) => edad >= 18;
-const nombreCompleto = (nombre, apellido) => `${nombre} ${apellido}`;
+const eAMayusculas = (texto) => texto.toUpperCase();
+const eEsMayorDeEdad = (edad) => edad >= 18;
+const eNombreCompleto = (nombre, apellido) => `${nombre} ${apellido}`;
 
 // EJERCICIO 5: Parámetros por defecto
 // Instrucción: Escribí `formatearPrecio(monto, moneda = "$", decimales = 2)`
@@ -368,9 +373,10 @@ const nombreCompleto = (nombre, apellido) => `${nombre} ${apellido}`;
 
 // Escribí tu código acá abajo:
 
-const formatearPrecio = (monto, moneda = "$", decimales = 2) => `${moneda} ${monto.toFixed(decimales)} `;
+const formatearPrecio = (monto, moneda = "$", decimales = 2) => `${moneda}${monto.toFixed(decimales)}`;
 console.log(formatearPrecio(1234.5));
-
+console.log(formatearPrecio(1234.5, "US$"));
+console.log(formatearPrecio(1234.5, "€", 0));
 // EJERCICIO 6: Refactorizar el Día 3
 // Instrucción: Convertí el ejercicio del "producto más caro" en una
 // función `masCaro(lista)` que reciba un array y DEVUELVA el objeto
@@ -394,7 +400,7 @@ const libros = [
 
 function masCaro(lista){
   let caro = lista[0];
-  for(item of lista){
+  for(const item of lista){
     if (item.precio > caro.precio) {
       caro = item;
     }
@@ -402,6 +408,7 @@ function masCaro(lista){
   return caro;
 }
 console.log(masCaro(productos));
+console.log(masCaro(libros));
 
 // EJERCICIO 7: Predecí la salida (scope)
 // Instrucción: ANTES de ejecutar, escribí en un comentario qué creés
@@ -421,8 +428,8 @@ function incrementar() {
 // console.log(contador)      → 0
 
 // Descomentá para verificar:
-// console.log(incrementar());
-// console.log(contador);
+console.log(incrementar());
+console.log(contador);
 
 
 // EJERCICIO 8 (bonus): Callback propio
@@ -442,14 +449,14 @@ function procesarLista(lista, fn) {
   }
   return resultado; 
 }
-function doble(numero) {
-  return numero * 2;
-}
+
+const numeros = [5, 10, 15];
 
 const arrayFinal = procesarLista(numeros, doble);
-console.log(arrayFinal); 
+console.log("Resultado del doble:", arrayFinal); 
 
-
+const arrayCuadrados = procesarLista([1, 2, 3, 4], (n) => n * n);
+console.log("Resultado de los cuadrados:", arrayCuadrados);
 // ===============================================
 // Cuando termines, ejecutá: node dia-04-funciones.js
 // Después pedile a Claude Code que revise tus respuestas 💬
